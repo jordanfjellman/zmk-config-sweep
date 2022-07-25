@@ -42,9 +42,9 @@
 
     default_layer {
       bindings = <
-        &kp Y   &kp C   &kp L       &kp M                 &kp K             &kp Z       &kp F       &kp U                 &td MINUS COMMA   &kp BKSP
-        &kp I   &kp S   &hm LALT R  &hm LGUI T            &kp G             &kp P       &hm RGUI N  &hm RALT E            &kp A             &kp O
-        &kp Q   &kp V   &kp W       &kp D                 &kp J             &kp B       &kp H       &td UNDERSCORE SLASH  &td EXCL DOT      &kp X
+        &kp Q   &kp W   &kp E       &kp R                 &kp T             &kp Y       &kp U       &kp I                 &td MINUS COMMA   &kp BKSP
+        &kp A   &kp S   &hm LALT D  &hm LGUI F            &kp G             &kp H       &hm RGUI J  &hm RALT K            &kp L             &kp O
+        &kp Z   &kp X   &kp C       &kp V                 &kp B             &kp N       &kp M       &td UNDERSCORE SLASH  &td EXCL DOT      &kp P
                                     &mt LC(LS(LALT)) SPC  &sk LSHIFT        &sk RCTRL   &to 1
       >;
     };
@@ -71,7 +71,7 @@
       bindings = <
         &kp ESC   &trans  &trans  &trans  &trans          &kp LG(LBKT)  &kp LC(LS(TAB))   &kp RC(TAB) &kp LG(RBKT)  &kp BKSP
         &kp TAB   &trans  &trans  &trans  &trans          &kp LEFT      &kp DOWN          &kp UP      &kp RIGHT     &kp ENTER
-        &to 4     &trans  &trans  &trans  &trans          &trans        &trans            &trans      &trans        &trans
+        &to 4     &trans  &trans  &trans  &trans          &trans        &trans            &trans      &trans        &to 5
                                   &to 0   &sk LGUI        &sk RALT      &to 1
       >;
     };
@@ -82,6 +82,15 @@
         &trans        &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &trans        &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans
         &trans        &trans      &trans      &trans      &trans        &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans
                                               &to 0       &trans        &trans  &to 1
+      >;
+    };
+
+    isrt_layer {
+      bindings = <
+        &kp Y   &kp C   &kp L       &kp M                 &kp K             &kp Z       &kp F       &kp U                 &td MINUS COMMA   &kp BKSP
+        &kp I   &kp S   &hm LALT R  &hm LGUI T            &kp G             &kp P       &hm RGUI N  &hm RALT E            &kp A             &kp O
+        &kp Q   &kp V   &kp W       &kp D                 &kp J             &kp B       &kp H       &td UNDERSCORE SLASH  &td EXCL DOT      &kp X
+                                    &mt LC(LS(LALT)) SPC  &sk LSHIFT        &sk RCTRL   &to 1
       >;
     };
   };
