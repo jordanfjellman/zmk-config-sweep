@@ -77,10 +77,10 @@
 
         isrt_layer {
             bindings = <
-&kp Y      &kp C      &kp L       &kp M                 &kp K         &kp Z      &kp F       &kp U                 &td MINUS COMMA  &kp BKSP
-&kp LC(I)  &kp LS(S)  &hm LALT R  &hm LGUI T            &kp G         &kp P      &hm RGUI N  &hm RALT E            &kp RS(A)        &kp RC(O)
-&kp Q      &kp V      &kp W       &kp D                 &kp J         &kp B      &kp H       &td UNDERSCORE SLASH  &td EXCL DOT     &kp X
-                                  &mt LC(LS(LALT)) SPC  &sk LSHIFT    &sk RCTRL  &to 0
+&kp Y      &kp C      &kp L       &kp M                       &kp K         &kp Z      &kp F       &kp U                 &td MINUS COMMA  &none
+&kp LC(I)  &kp LS(S)  &hm LALT R  &hm LGUI T                  &kp G         &kp P      &hm RGUI N  &hm RALT E            &kp RS(A)        &kp RC(O)
+&kp Q      &kp V      &kp W       &kp D                       &kp J         &kp B      &kp H       &td UNDERSCORE SLASH  &td EXCL DOT     &kp X
+                                  &mt LC(LS(LALT)) BACKSPACE  &sk LSHIFT    &sk RCTRL  &to 0
             >;
         };
     };
