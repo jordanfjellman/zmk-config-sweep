@@ -50,46 +50,37 @@
 
         symbols_layer {
             bindings = <
-&kp ESC    &kp AT_SIGN    &kp HASH   &td LS(LG(N4)) DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS  &kp STAR  &kp PIPE  &kp BKSP
-&kp TAB    &kp LESS_THAN  &kp EQUAL  &kp GREATER_THAN       &kp SQT        &kp COLON  &kp RPAR  &kp LPAR  &kp SEMI  &kp ENTER
-&kp TILDE  &kp PLUS       &kp MINUS  &kp GRAVE              &kp DQT        &kp MINUS  &kp RBKT  &kp LBKT  &kp BSLH  &to 3
-                                     &to 0                  &sk LSHIFT     &sk RALT   &to 2
+&kp ESC    &kp AT_SIGN    &kp HASH   &td LS(LG(N4)) DOLLAR  &kp PERCENT      &kp CARET  &kp AMPS  &kp STAR  &kp PIPE  &none
+&kp TAB    &kp LESS_THAN  &kp EQUAL  &kp GREATER_THAN       &kp SQT          &kp COLON  &kp RPAR  &kp LPAR  &kp SEMI  &kp ENTER
+&kp TILDE  &kp PLUS       &kp MINUS  &kp GRAVE              &kp DQT          &kp MINUS  &kp RBKT  &kp LBKT  &kp BSLH  &none
+                                     &to 0                  &kp BACKSPACE    &trans     &to 2
             >;
         };
 
         numbers_layer {
             bindings = <
-&kp KP_DIVIDE    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS     &trans     &trans  &trans  &trans  &trans
-&kp KP_MULTIPLY  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS      &kp H      &kp J   &kp K   &kp L   &kp LS(G)
-&kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_EQUAL     &trans     &trans  &trans  &trans  &trans
-                                                   &to 0            &kp BACKSPACE    &kp SPACE  &to 1
-            >;
-        };
-
-        nav_layer {
-            bindings = <
-&kp ESC  &trans  &trans  &trans  &trans      &kp LG(LBKT)  &kp LC(LS(TAB))  &kp RC(TAB)  &kp LG(RBKT)  &trans
-&kp TAB  &trans  &trans  &trans  &trans      &kp LEFT      &kp DOWN         &kp UP       &kp RIGHT     &kp ENTER
-&to 4    &trans  &trans  &trans  &trans      &trans        &trans           &trans       &trans        &to 5
-                         &to 0   &sk LGUI    &sk RALT      &to 1
+&trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS    &kp LG(LEFT_BRACKET)  &kp LC(D)                 &kp RC(U)         &kp RG(RIGHT_BRACKET)  &trans
+&trans           &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS     &kp LEFT_ARROW        &hm RIGHT_GUI DOWN_ARROW  &kp RA(UP_ARROW)  &kp RS(RIGHT_ARROW)    &trans
+&kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_EQUAL    &none                 &kp LS(G)                 &kp G             &trans                 &trans
+                                                   &to 0            &trans          &trans                &to 3
             >;
         };
 
         settings_layer {
             bindings = <
-&bootloader  &sys_reset  &trans      &trans      &trans    &trans  &trans        &trans        &sys_reset    &bootloader
-&trans       &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &trans    &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans
-&trans       &trans      &trans      &trans      &trans    &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans
-                                     &to 0       &trans    &trans  &to 1
+&bootloader   &sys_reset    &none         &none         &none    &none       &none       &none       &sys_reset  &bootloader
+&none         &bt BT_SEL 4  &none         &none         &none    &bt BT_PRV  &bt BT_CLR  &bt BT_CLR  &bt BT_NXT  &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none    &none       &none       &none       &none       &none
+                                          &to 0         &none    &none       &to 4
             >;
         };
 
         isrt_layer {
             bindings = <
-&kp Y  &kp C  &kp L       &kp M                 &kp K         &kp Z      &kp F       &kp U                 &td MINUS COMMA  &kp BKSP
-&kp I  &kp S  &hm LALT R  &hm LGUI T            &kp G         &kp P      &hm RGUI N  &hm RALT E            &kp A            &kp O
-&kp Q  &kp V  &kp W       &kp D                 &kp J         &kp B      &kp H       &td UNDERSCORE SLASH  &td EXCL DOT     &kp X
-                          &mt LC(LS(LALT)) SPC  &sk LSHIFT    &sk RCTRL  &to 1
+&kp Y      &kp C      &kp L       &kp M                 &kp K         &kp Z      &kp F       &kp U                 &td MINUS COMMA  &kp BKSP
+&kp LC(I)  &kp LS(S)  &hm LALT R  &hm LGUI T            &kp G         &kp P      &hm RGUI N  &hm RALT E            &kp RS(A)        &kp RC(O)
+&kp Q      &kp V      &kp W       &kp D                 &kp J         &kp B      &kp H       &td UNDERSCORE SLASH  &td EXCL DOT     &kp X
+                                  &mt LC(LS(LALT)) SPC  &sk LSHIFT    &sk RCTRL  &to 0
             >;
         };
     };
