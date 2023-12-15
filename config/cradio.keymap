@@ -59,10 +59,10 @@
 
         numbers_layer {
             bindings = <
-&trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS    &kp LG(LEFT_BRACKET)  &kp LC(D)                 &kp RC(U)         &kp RG(RIGHT_BRACKET)  &trans
-&trans           &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS     &kp LEFT_ARROW        &hm RIGHT_GUI DOWN_ARROW  &kp RA(UP_ARROW)  &kp RS(RIGHT_ARROW)    &trans
-&kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_EQUAL    &none                 &kp LS(G)                 &kp G             &trans                 &trans
-                                                   &to 0            &trans          &trans                &to 3
+&trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS    &kp LG(LS(LEFT_BRACKET))  &kp LC(D)                 &kp RC(U)         &kp RG(RS(RIGHT_BRACKET))  &trans
+&trans           &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS     &kp LEFT_ARROW            &hm RIGHT_GUI DOWN_ARROW  &kp RA(UP_ARROW)  &kp RS(RIGHT_ARROW)        &trans
+&kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_EQUAL    &kp LG(LEFT_BRACKET)      &kp LS(G)                 &kp G             &kp RG(RIGHT_BRACKET)      &trans
+                                                   &to 0            &trans          &trans                    &to 3
             >;
         };
 
