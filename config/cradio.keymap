@@ -5,93 +5,92 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 &mt {
-  flavor = "tap-preferred";
-  tapping_term_ms = <200>;
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
 };
 
 / {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
 
-  behaviors {
-    hm: homerow_mods {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS";
-      #binding-cells = <2>;
-      tapping-term-ms = <200>;
-      quick_tap_ms = <0>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
+        td: tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPDANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
     };
 
-    td: tapdance {
-      compatible = "zmk,behavior-hold-tap";
-      label = "TAPDANCE";
-      #binding-cells = <2>;
-      tapping-term-ms = <150>;
-      quick_tap_ms = <0>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
-    };
-  };
+    keymap {
+        compatible = "zmk,keymap";
 
-  keymap {
-    compatible = "zmk,keymap";
+        default_layer {
+            bindings = <
+&kp Q        &kp W         &kp E       &kp R                       &kp T                    &kp Y      &kp U       &kp I       &kp O         &kp P
+&hm LCTRL A  &hm LSHIFT S  &hm LALT D  &hm LCMD F                  &kp G                    &kp H      &hm RCMD J  &hm RALT K  &hm RSHIFT L  &hm RCTRL SEMI
+&kp Z        &kp X         &kp C       &kp V                       &kp B                    &kp N      &kp M       &kp COMMA   &kp PERIOD    &kp SLASH
+                                       &mt LC(LS(LA(LCMD))) ENTER  &mt LC(LS(LALT)) BSPC    &kp SPACE  &to 1
+            >;
+        };
 
-    default_layer {
-      bindings = <
-        &kp Q         &kp W         &kp E       &kp R           &kp T                       &kp Y       &kp U       &kp I       &kp O         &kp P
-        &hm LCTRL A   &hm LSHIFT S  &hm LALT D  &hm LCMD F      &kp G                       &kp H       &hm RCMD J  &hm RALT K  &hm RSHIFT L  &hm RCTRL SEMI
-        &kp Z         &kp X         &kp C       &kp V           &kp B                       &kp N       &kp M       &kp COMMA   &kp PERIOD    &kp SLASH
-                                    &mt LC(LS(LA(LCMD))) ENTER  &mt LC(LS(LALT)) BSPC       &kp SPACE   &to 1
-      >;
-    };
+        symbols_layer {
+            bindings = <
+&kp ESC    &kp AT_SIGN    &kp HASH   &td LS(LG(N4)) DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS  &kp STAR  &kp PIPE  &kp BKSP
+&kp TAB    &kp LESS_THAN  &kp EQUAL  &kp GREATER_THAN       &kp SQT        &kp COLON  &kp RPAR  &kp LPAR  &kp SEMI  &kp ENTER
+&kp TILDE  &kp PLUS       &kp MINUS  &kp GRAVE              &kp DQT        &kp MINUS  &kp RBKT  &kp LBKT  &kp BSLH  &to 3
+                                     &to 0                  &sk LSHIFT     &sk RALT   &to 2
+            >;
+        };
 
-    symbols_layer {
-      bindings = <
-        &kp ESC     &kp AT_SIGN     &kp HASH    &td LS(LG(N4)) DOLLAR   &kp PERCENT       &kp CARET   &kp AMPS    &kp STAR  &kp PIPE  &kp BKSP
-        &kp TAB     &kp LESS_THAN   &kp EQUAL   &kp GREATER_THAN        &kp SQT           &kp COLON   &kp RPAR    &kp LPAR  &kp SEMI  &kp ENTER
-        &kp TILDE   &kp PLUS        &kp MINUS   &kp GRAVE               &kp DQT           &kp MINUS   &kp RBKT    &kp LBKT  &kp BSLH  &to 3
-                                                &to 0                   &sk LSHIFT        &sk RALT    &to 2
-      >;
-    };
+        numbers_layer {
+            bindings = <
+&kp KP_DIVIDE    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS     &trans     &trans  &trans  &trans  &trans
+&kp KP_MULTIPLY  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS      &kp H      &kp J   &kp K   &kp L   &kp LS(G)
+&kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_EQUAL     &trans     &trans  &trans  &trans  &trans
+                                                   &to 0            &kp BACKSPACE    &kp SPACE  &to 1
+            >;
+        };
 
-    numbers_layer {
-      bindings = <
-        &trans  &trans  &kp K   &kp LS(G)   &kp PLUS          &kp MINUS   &kp N7  &kp N8  &kp N9  &kp BKSP
-        &trans  &kp H   &kp J   &kp L       &trans            &kp EQUAL   &kp N4  &kp N5  &kp N6  &kp ENTER
-        &trans  &trans  &trans  &trans      &trans            &kp N0      &kp N1  &kp N2  &kp N3  &kp DOT
-                                &to 0       &sk LGUI          &sk RALT    &to 1
-      >;
-    };
+        nav_layer {
+            bindings = <
+&kp ESC  &trans  &trans  &trans  &trans      &kp LG(LBKT)  &kp LC(LS(TAB))  &kp RC(TAB)  &kp LG(RBKT)  &trans
+&kp TAB  &trans  &trans  &trans  &trans      &kp LEFT      &kp DOWN         &kp UP       &kp RIGHT     &kp ENTER
+&to 4    &trans  &trans  &trans  &trans      &trans        &trans           &trans       &trans        &to 5
+                         &to 0   &sk LGUI    &sk RALT      &to 1
+            >;
+        };
 
-    nav_layer {
-      bindings = <
-        &kp ESC   &trans  &trans  &trans  &trans          &kp LG(LBKT)  &kp LC(LS(TAB))   &kp RC(TAB) &kp LG(RBKT)  &kp BKSP
-        &kp TAB   &trans  &trans  &trans  &trans          &kp LEFT      &kp DOWN          &kp UP      &kp RIGHT     &kp ENTER
-        &to 4     &trans  &trans  &trans  &trans          &trans        &trans            &trans      &trans        &to 5
-                                  &to 0   &sk LGUI        &sk RALT      &to 1
-      >;
-    };
+        settings_layer {
+            bindings = <
+&bootloader  &sys_reset  &trans      &trans      &trans    &trans  &trans        &trans        &sys_reset    &bootloader
+&trans       &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &trans    &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans
+&trans       &trans      &trans      &trans      &trans    &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans
+                                     &to 0       &trans    &trans  &to 1
+            >;
+        };
 
-    settings_layer {
-      bindings = <
-        &bootloader   &sys_reset  &trans      &trans      &trans        &trans  &trans        &trans        &sys_reset    &bootloader
-        &trans        &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &trans        &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans
-        &trans        &trans      &trans      &trans      &trans        &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans
-                                              &to 0       &trans        &trans  &to 1
-      >;
+        isrt_layer {
+            bindings = <
+&kp Y  &kp C  &kp L       &kp M                 &kp K         &kp Z      &kp F       &kp U                 &td MINUS COMMA  &kp BKSP
+&kp I  &kp S  &hm LALT R  &hm LGUI T            &kp G         &kp P      &hm RGUI N  &hm RALT E            &kp A            &kp O
+&kp Q  &kp V  &kp W       &kp D                 &kp J         &kp B      &kp H       &td UNDERSCORE SLASH  &td EXCL DOT     &kp X
+                          &mt LC(LS(LALT)) SPC  &sk LSHIFT    &sk RCTRL  &to 1
+            >;
+        };
     };
-
-    isrt_layer {
-      bindings = <
-        &kp Y   &kp C   &kp L       &kp M                 &kp K             &kp Z       &kp F       &kp U                 &td MINUS COMMA   &kp BKSP
-        &kp I   &kp S   &hm LALT R  &hm LGUI T            &kp G             &kp P       &hm RGUI N  &hm RALT E            &kp A             &kp O
-        &kp Q   &kp V   &kp W       &kp D                 &kp J             &kp B       &kp H       &td UNDERSCORE SLASH  &td EXCL DOT      &kp X
-                                    &mt LC(LS(LALT)) SPC  &sk LSHIFT        &sk RCTRL   &to 1
-      >;
-    };
-  };
 };
