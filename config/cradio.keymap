@@ -53,35 +53,30 @@
 &kp ESC    &kp AT_SIGN    &kp HASH   &td LS(LG(N4)) DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS   &kp STAR  &kp PIPE  &none
 &kp TAB    &kp LESS_THAN  &kp EQUAL  &kp GREATER_THAN       &kp SQT        &kp COLON  &kp RPAR   &kp LPAR  &kp SEMI  &kp ENTER
 &kp TILDE  &kp PLUS       &kp MINUS  &kp GRAVE              &kp DQT        &kp MINUS  &kp RBKT   &kp LBKT  &kp BSLH  &none
-                                     &kp BACKSPACE          &to 0          &to 2      &kp SPACE
+                                     &kp BACKSPACE          &to 0          &to 0      &kp SPACE
             >;
         };
 
-        numbers_layer {
+        number_layer {
             bindings = <
-&trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS    &kp LG(LS(LEFT_BRACKET))  &kp LC(D)                 &kp RC(U)         &kp RG(RS(RIGHT_BRACKET))  &trans
-&trans           &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS     &kp LEFT_ARROW            &hm RIGHT_GUI DOWN_ARROW  &kp RA(UP_ARROW)  &kp RS(RIGHT_ARROW)        &trans
-&kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_EQUAL    &kp LG(LEFT_BRACKET)      &kp LS(G)                 &kp G             &kp RG(RIGHT_BRACKET)      &trans
-                                                   &trans           &to 0           &to 3                     &trans
+&none  &none  &none  &none   &none     &none            &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS
+&none  &none  &none  &none   &none     &none            &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS
+&none  &none  &none  &none   &none     &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER
+                     &trans  &trans    &trans           &trans
             >;
+
+            label = "Number Keys";
         };
 
-        settings_layer {
+        function_layer {
             bindings = <
-&bootloader   &sys_reset    &none         &none         &none    &none       &none       &none       &sys_reset  &bootloader
-&none         &bt BT_SEL 4  &none         &none         &none    &bt BT_PRV  &bt BT_CLR  &bt BT_CLR  &bt BT_NXT  &none
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none    &none       &none       &none       &none       &none
-                                          &none         &to 0    &to 4       &none
+&none       &none         &none       &none         &none         &none   &kp F7  &kp F8  &kp F9  &kp F12
+&bt BT_PRV  &bt BT_SEL 0  &bt BT_CLR  &bt BT_SEL 1  &bt BT_NXT    &none   &kp F4  &kp F5  &kp F6  &kp F11
+&none       &none         &none       &none         &none         &none   &kp F1  &kp F2  &kp F3  &kp F10
+                                      &trans        &trans        &trans  &trans
             >;
-        };
 
-        isrt_layer {
-            bindings = <
-&kp Y      &kp C      &kp L       &kp M                       &kp K         &kp Z  &kp F              &kp U                 &td MINUS COMMA  &none
-&kp LC(I)  &kp LS(S)  &hm LALT R  &hm LGUI T                  &kp G         &kp P  &hm RGUI N         &hm RALT E            &kp RS(A)        &kp RC(O)
-&kp Q      &kp V      &kp W       &kp D                       &kp J         &kp B  &kp H              &td UNDERSCORE SLASH  &td EXCL DOT     &kp X
-                                  &mt LC(LS(LALT)) BACKSPACE  &sk LSHIFT    &to 1  &sk RIGHT_CONTROL
-            >;
+            label = "Function Keys";
         };
     };
 };
