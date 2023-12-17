@@ -55,10 +55,10 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W         &mt LA(LC(LG(LEFT_SHIFT))) E  &mt LA(LC(LEFT_SHIFT)) R  &kp T      &kp Y      &mt RA(RC(RIGHT_SHIFT)) U  &mt RA(RC(RG(RIGHT_SHIFT))) I  &kp O         &kp P
-&hm LCTRL A  &hm LSHIFT S  &hm LALT D                    &hm LCMD F                &kp G      &kp H      &hm RCMD J                 &hm RALT K                     &hm RSHIFT L  &hm RCTRL SEMI
-&kp Z        &kp X         &kp C                         &kp V                     &kp B      &kp N      &kp M                      &kp COMMA                      &kp PERIOD    &kp SLASH
-                                                         &lt 2 BACKSPACE           &kp TAB    &kp ENTER  &lt 1 SPACE
+&kp Q             &kp W               &mt LA(LC(LG(LEFT_SHIFT))) E  &mt LA(LC(LEFT_SHIFT)) R  &kp T      &kp Y      &mt RA(RC(RIGHT_SHIFT)) U  &mt RA(RC(RG(RIGHT_SHIFT))) I  &kp O                &kp P
+&hm LEFT_SHIFT A  &hm LEFT_CONTROL S  &hm LALT D                    &hm LCMD F                &kp G      &kp H      &hm RCMD J                 &hm RALT K                     &hm RIGHT_CONTROL L  &hm RIGHT_SHIFT SEMI
+&kp Z             &kp X               &kp C                         &kp V                     &kp B      &kp N      &kp M                      &kp COMMA                      &kp PERIOD           &kp SLASH
+                                                                    &lt 2 BACKSPACE           &kp TAB    &kp ENTER  &lt 1 SPACE
             >;
 
             label = "Alpha Keys";
