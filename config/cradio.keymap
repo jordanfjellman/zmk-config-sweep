@@ -48,6 +48,16 @@
             bindings = <&kp DELETE>;
             key-positions = <32 33>;
         };
+
+        combo_left_reset {
+            bindings = <&sys_reset>;
+            key-positions = <0 31>;
+        };
+
+        combo_right_reset {
+            bindings = <&sys_reset>;
+            key-positions = <32 9>;
+        };
     };
 
     keymap {
