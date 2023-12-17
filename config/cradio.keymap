@@ -58,6 +58,16 @@
             bindings = <&sys_reset>;
             key-positions = <32 9>;
         };
+
+        combo_left_bootloader {
+            bindings = <&bootloader>;
+            key-positions = <0 30>;
+        };
+
+        combo_right_bootloader {
+            bindings = <&bootloader>;
+            key-positions = <33 9>;
+        };
     };
 
     keymap {
